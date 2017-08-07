@@ -1,0 +1,37 @@
+<style lang="less">
+  .hello{}
+</style>
+<template>
+    <Removeable @remove.user="onRemove" />
+</template>
+
+<script>
+  import wepy from 'wepy';
+  import Removeable from '../components/index';
+
+  export default class extends wepy.page {
+
+    config = {
+      navigationBarTitleText: 'wepy-flexbox-grid demo'
+    }
+
+    components = {
+      Removeable
+    }
+
+    data = {
+    }
+
+    computed = {
+      now () {
+        return +new Date()
+      }
+    }
+
+    methods = {
+      onRemove(){
+        console.log('onRemove!')
+      }
+    }
+  }
+</script>
